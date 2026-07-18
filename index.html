@@ -114,9 +114,10 @@
 
   /* ===== HERO ===== */
   .hero{
-    height:100vh; min-height:640px; position:relative; display:flex; align-items:flex-end;
-    overflow:hidden;
+    min-height: 100vh; min-height: 100svh;
+    position:relative; display:flex; align-items:flex-end;
   }
+  .hero-media{ position:absolute; inset:0; overflow:hidden; z-index:0; }
   .hero-bg{
     position:absolute; inset:0; background-size:cover; background-position:center 62%;
     transform: scale(1.08);
@@ -129,7 +130,7 @@
     z-index:1;
   }
   .hero-skyline{ position:absolute; left:0; right:0; bottom:0; z-index:1; opacity:.9; pointer-events:none; }
-  .hero-content{ position:relative; z-index:2; width:100%; padding: 0 40px 90px; }
+  .hero-content{ position:relative; z-index:2; width:100%; padding: 128px 40px 90px; }
   .hero-inner{ max-width:1240px; margin:0 auto; }
   .hero-badge{
     display:inline-flex; align-items:center; gap:10px; font-family:var(--font-mono);
@@ -360,7 +361,6 @@
      RESPONSIVE — mobile landscape / small tablet (≤768px)
   ==================================================== */
   @media (max-width: 768px){
-    .hero{ min-height:600px; }
     .hero-badge{ font-size:10px; letter-spacing:.12em; white-space:normal; text-align:center; }
     .scroll-cue{ display:none; }
     .hero-meta{ display:grid; grid-template-columns: 1fr 1fr; gap:22px 16px; max-width:none; }
@@ -377,8 +377,7 @@
     header.scrolled{ padding:12px 20px; }
     .brand img{ height:28px; }
     .brand-name{ font-size:16px; }
-    .hero{ min-height:560px; }
-    .hero-content{ padding: 0 20px 52px; }
+    .hero-content{ padding: 100px 20px 52px; }
     .hero-badge{ margin-bottom:20px; padding:7px 14px; }
     h1.hero-h{ max-width:none; }
     .hero-sub{ max-width:none; font-size:15px; }
@@ -456,7 +455,9 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('assets/building-view.jpg');"></div>
+  <div class="hero-media">
+    <div class="hero-bg" style="background-image:url('assets/building-view.jpg');"></div>
+  </div>
   <svg class="hero-skyline" viewBox="0 0 1440 140" preserveAspectRatio="none" style="height:120px; width:100%;">
     <polyline points="0,140 0,90 90,30 180,90 260,50 340,95 430,20 520,90 610,60 700,95 800,35 900,90 1000,55 1100,95 1200,30 1300,90 1440,60 1440,140" fill="none" stroke="#c9a24b" stroke-opacity="0.35" stroke-width="1"/>
   </svg>
